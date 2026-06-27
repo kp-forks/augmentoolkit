@@ -35,10 +35,6 @@ Beyond the [common configuration fields](config_common_fields.md), this pipeline
 *   `lnco_wait_time`: (Integer) Seconds to wait between requests during scraping.
 *   `lnco_max_workers`: (Integer) Number of concurrent threads for scraping.
 
-**NSFW Content Note:** The pipeline includes prompts intended for generating NSFW content (`prompts_spicy` vs standard `prompts`), catering to adult themes if present in input texts. However, due to the sensitive nature, the publicly distributed NSFW prompts are intentionally ambiguous. **Generating coherent NSFW content matching specific tastes typically requires using the custom datagen model trained to understand what these prompts actually mean.** Note that while the standard prompts are not censored, they also won't be terribly interesting or well-paced if you try to use them for NSFW purposes.
-
-Also, despite the spicy prompts' ambiguity, I am still concerned about including them in the main project repo, so if you want them please go over to the Discord and ask (can't include this in my company's professional GitHub!)
-
 ## Model Requirements
 
 *   **`small_model` & `large_model`:** RPToolkit was developed before the prevalence of dedicated reasoning models. **Both `small_model` and `large_model` should be strong general-purpose instruction-following models.** The prompts used for emotion generation, feature extraction, scene card generation, story generation, and rating are *not* designed for Chain-of-Thought or other explicit reasoning structures. Using reasoning models (like Qwen/QwQ or R1) may lead to format errors or unexpected behavior. Models like Llama 3.1, DeepSeek-V3, or Command R + are appropriate.
